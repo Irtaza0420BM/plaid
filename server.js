@@ -7,9 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
-const PLAID_SECRET = process.env.PLAID_SECRET;
-const PLAID_ENV = process.env.PLAID_ENV || "sandbox";
+const PLAID_CLIENT_ID = 649313df0b4b6e00127961ce;
+const PLAID_SECRET = 4943e9fe9d97f23de683394d5d785c;
+const PLAID_ENV = sandbox;
 const PORT = process.env.PORT || 5000;
 
 app.get("/get_link_token", async (req, res) => {
