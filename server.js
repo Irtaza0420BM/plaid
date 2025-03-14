@@ -12,7 +12,6 @@ const PLAID_SECRET = process.env.PLAID_SECRET;
 const PLAID_ENV = process.env.PLAID_ENV || "sandbox";
 const PORT = process.env.PORT || 5000;
 
-// 🔹 Generate link_token
 app.get("/get_link_token", async (req, res) => {
   try {
     const response = await axios.post(
@@ -35,7 +34,6 @@ app.get("/get_link_token", async (req, res) => {
   }
 });
 
-// 🔹 Exchange public_token for access_token
 app.post("/exchange_public_token", async (req, res) => {
   try {
     const { public_token } = req.body;
@@ -56,14 +54,12 @@ app.post("/exchange_public_token", async (req, res) => {
   }
 });
 
-// 🔹 Default route
 app.get("/", (req, res) => {
   res.send(
     "Plaid API Server Running 🚀 - Use /get_link_token or /exchange_public_token"
   );
 });
 
-// Start the server
 app.listen(PORT, () =>
   console.log(`Server running on http://localhost:${PORT}`)
 );
