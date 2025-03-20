@@ -24,7 +24,7 @@ app.get("/get_link_token", async (req, res) => {
         client_name: "Auto Plaid Connect",
         country_codes: ["US"],
         language: "en",
-        products: ["transactions"],
+        products: ["transactions", "liabilities"],
       }
     );
 
